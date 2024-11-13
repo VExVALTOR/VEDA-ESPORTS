@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEDA ESPORTS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Loading Spinner -->
+    <div class="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="language-toggle" aria-label="Select Language">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('other')">Other Language</button>
+    </div>
+
+    <!-- Background Video -->
+    <div class="background-video">
+        <video autoplay loop muted playsinline>
+            <source src="Gaming-Background.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Header and Navigation -->
+    <header class="header">
+        <img src="gaming-background.jpg" alt="VEDA ESPORTS Logo" class="logo">
+        <nav class="navbar">
+            <a href="#about" id="nav-about" aria-label="About Section">About</a>
+            <a href="#team" id="nav-team" aria-label="Team Section">Our Team</a>
+            <a href="#achievements" id="nav-achievements" aria-label="Achievements Section">Achievements</a>
+            <a href="#community" id="nav-community" aria-label="Community Section">Community</a>
+            <a href="#contact" id="nav-contact" aria-label="Contact Section">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Typewriter Animation -->
+    <section class="about-section" id="about">
+        <div class="hero-text" id="hero-text">
+            <h1>Welcome to <span id="animated-text">VEDA ESPORTS</span></h1>
+        </div>
+        <p data-lang="en">Join us on a journey to conquer the world of esports with a dedicated team specializing in BGMI.</p>
+        <p data-lang="other" style="display:none;">Únase a nosotros en un viaje para conquistar el mundo de los deportes electrónicos con un equipo dedicado especializado en BGMI.</p>
+    </section>
+
+    <!-- Team Section with Flip Cards -->
+    <section class="team-section" id="team">
+        <h2>Our Team</h2>
+        <p>Meet the players who make VEDA ESPORTS unstoppable.</p>
+    
+        <!-- Player Cards -->
+        <div class="player-card">
+            <div class="player-front">
+                <img src="souymadip.jpg" alt="Souymadip" />
+                <h3>Souymadip</h3>
+            </div>
+            <div class="player-back">
+                <p>Role: IGL</p>
+                <p>Bio: A strategic mastermind and in-game leader, guiding the team to victory with flawless tactical execution.</p>
+            </div>
+        </div>
+    
+        <div class="player-card">
+            <div class="player-front">
+                <img src="pritam.jpg" alt="Pritam Das" />
+                <h3>Pritam</h3>
+            </div>
+            <div class="player-back">
+                <p>Role: Freeman</p>
+                <p>Bio: A versatile freeman who consistently dominates the BGMI scene with his performances and adaptability.</p>
+                <p>Achievements: Team MVP</p>
+            </div>
+        </div>
+    
+        <div class="player-card">
+            <div class="player-front">
+                <img src="om.jpg" alt="Om" />
+                <h3>Om</h3>
+            </div>
+            <div class="player-back">
+                <p>Role: Assaulter</p>
+                <p>Bio: A fearless assaulter, taking aggressive gameplay to the next level and always charging forward in intense situations.</p>
+            </div>
+        </div>
+    
+        <div class="player-card">
+            <div class="player-front">
+                <img src="sukrit.jpg" alt="Sukrit" />
+                <h3>Sukrit</h3>
+            </div>
+            <div class="player-back">
+                <p>Role: Supporter</p>
+                <p>Bio: Renowned for his consistent and strategic support, helping his team dominate the stage.</p>
+            </div>
+        </div>
+    
+        <div class="player-card">
+            <div class="player-front">
+                <img src="rohit.jpg" alt="Rohit" />
+                <h3>Rohit</h3>
+            </div>
+            <div class="player-back">
+                <p>Role: Fifth Player (Flex)</p>
+                <p>Bio: A dynamic flex player, able to adapt to any role when needed and provide crucial support for the team’s success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section with Carousel -->
+    <section class="achievements-section" id="achievements">
+        <h2>Achievements</h2>
+        <div class="carousel">
+            <div class="carousel-item active">Achievement 1: International Tournament Win</div>
+            <div class="carousel-item">Achievement 2: Regional MVP Award</div>
+            <div class="carousel-item">Achievement 3: Highest Kill Record (2024)</div>
+            <button class="carousel-control prev" onclick="prevSlide()" aria-label="Previous Achievement">&#10094;</button>
+            <button class="carousel-control next" onclick="nextSlide()" aria-label="Next Achievement">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section" id="community">
+        <h2>Community and Fan Engagement</h2>
+        <p>Engage with us in Q&A sessions, live streams, and fan events.</p>
+        <p>Follow us on our social media platforms to stay updated!</p>
+        <div class="social-media-icons">
+            <a href="https://instagram.com/vedaesports" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/vedaesports" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://twitter.com/vedaesports" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="POST" aria-labelledby="contact">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required aria-label="Your Name">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required aria-label="Your Email">
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required aria-label="Your Message"></textarea>
+            
+            <button type="submit" aria-label="Send Message">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer with News Section -->
+    <footer class="footer">
+        <div class="news">
+            <h3>Latest News</h3>
+            <p>Upcoming Tournament: Join us live on Dec 5th, 2024!</p>
+            <p>New Sponsorship: Excited to announce our partnership with XYZ!</p>
+        </div>
+        <p>&copy; 2024 VEDA ESPORTS. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

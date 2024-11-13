@@ -1,0 +1,232 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* General Layout */
+body {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ff6600;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Background Video */
+.background-video video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    object-fit: cover;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+    height: 50px;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+/* Typewriter Effect */
+.hero-text h1 {
+    font-size: 2.5em;
+}
+
+#animated-text {
+    display: inline-block;
+    border-right: 2px solid #ff6600;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Language Toggle */
+.language-toggle {
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+}
+
+.language-toggle button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.language-toggle button:hover {
+    transform: scale(1.05);
+}
+
+/* Team Section */
+.team-section .player-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 20px auto;
+    perspective: 1000px;
+    display: inline-block;
+}
+
+.player-front, .player-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.5s;
+}
+
+.player-back {
+    transform: rotateY(180deg);
+}
+
+.player-card:hover .player-front {
+    transform: rotateY(180deg);
+}
+
+.player-card:hover .player-back {
+    transform: rotateY(0deg);
+}
+
+.player-card img {
+    width: 100%;
+    height: auto;
+}
+
+.player-card h3 {
+    margin-top: 10px;
+}
+
+/* Achievements Carousel */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 0;
+}
+
+.carousel-control.next {
+    right: 0;
+}
+
+/* Social Media Icons */
+.social-media-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-media-icons a {
+    color: #fff;
+    font-size: 24px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-media-icons a:hover {
+    transform: scale(1.2);
+    color: #ff6600;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background-color: #111;
+}
+
+.footer p {
+    margin: 10px 0;
+}
